@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!--/* Sidebar fragment. Usage: th:replace="~{fragments/sidebar :: sidebar(active='dashboard')}" */-->
+<nav th:fragment="sidebar(active)" class="app-sidebar" id="appSidebar">
+
+    <div class="brand">
+        <div class="brand-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7L12 3L21 7V17L12 21L3 17V7Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M3 7L12 11L21 7" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M12 11V21" stroke="white" stroke-width="1.6"/>
+            </svg>
+        </div>
+        <div class="brand-text">
+            Container MS
+            <small>Maruti Suzuki Internship</small>
+        </div>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-label">Main</div>
+
+        <a th:href="@{/dashboard}" class="nav-link" th:classappend="${active == 'dashboard'} ? 'active' : ''">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="7" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+                <rect x="14" y="3" width="7" height="5" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+                <rect x="14" y="12" width="7" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+                <rect x="3" y="16" width="7" height="5" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+            Dashboard
+        </a>
+
+        <a th:href="@{/containers}" class="nav-link" th:classappend="${active == 'containers'} ? 'active' : ''">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7L12 3L21 7V17L12 21L3 17V7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M3 7L12 11L21 7" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M12 11V21" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+            Containers
+        </a>
+
+        <a th:href="@{/containers/add}" class="nav-link" th:classappend="${active == 'add'} ? 'active' : ''">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            Add Container
+        </a>
+    </div>
+
+    <div class="sidebar-footer">
+        <a th:href="@{/login}" class="nav-link">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 17L20 12L15 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 12H9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M9 21H5C3.9 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3H9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            Log out
+        </a>
+    </div>
+
+</nav>
+
+</body>
+</html>
