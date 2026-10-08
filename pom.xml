@@ -47,6 +47,12 @@ https://repo.maven.apache.org/maven2: repo.maven.apache.org)~~>-->
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <!-- H2 database for cloud deployment -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
         <!-- Apache POI - required later for Excel export module -->
         <dependency>
             <groupId>org.apache.poi</groupId>
